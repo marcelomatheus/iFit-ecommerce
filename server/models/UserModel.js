@@ -1,32 +1,32 @@
-import { DataTypes } from "sequelize";
-import database from "../database";
+const mongoose = require("mongoose")
+const bcrypt = require("bcrypt")
+const { ServerMonitoringMode } = require("mongodb")
 
-const User = database.define('Cliente',{
-    nome: {
-        type: DataTypes.STRING,
-        allowNull: false
+const userSchema = new mongoose.Schema({
+    username:{
+        type: String,
+        required: true,
+        unique: true
     },
-    cpf_cliente: {
-        type: DataTypes.STRING,
-        allowNull: false
+    password: {
+        type: String,
+        required: true
     },
-    email:{
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    cep: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    telefone:{
-        type: DataTypes.STRING,
-        allowNull: false
-    },
-    endereco: {
-        type: DataTypes.STRING,
-        allowNull: false
-    }
+    tokens: [
+        {
+            token:{
+                type: String,
+                required: true
+            }
+        }
+    ]
+});
 
-})
+userSchema.methods.verifyPassword = async function(password){
+    const user = this;
+    const isMatch = await bcrypt.compare(password,user.password);
+    return isMatch;
+};
 
-export default User;
+const User = mongoose.model("User", userSchema);
+module.exports = User;
