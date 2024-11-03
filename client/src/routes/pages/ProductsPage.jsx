@@ -35,27 +35,23 @@ const ProductsPage = () => {
 
   return (
     <div className="product-page">
-      <h1>Produtos</h1>
-
-    
       <div className="filters">
         <input
           type="text"
-          placeholder="Pesquisar produto..."
+          placeholder="Pesquisar produto"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        {/* Filtro de Categoria */}
+       
         <select onChange={(e) => setCategory(e.target.value)} value={category}>
           <option value="">Todas as Categorias</option>
           <option value="eletronicos">Eletrônicos</option>
           <option value="esportes">Esportes</option>
           <option value="vestuario">Vestuário</option>
-          {/* Adicione outras categorias conforme necessário */}
+
         </select>
 
-        {/* Filtro de Faixa de Preço */}
         <div className="price-filter">
           <label>Faixa de Preço:</label>
           <input
@@ -73,7 +69,7 @@ const ProductsPage = () => {
         </div>
       </div>
 
-      {/* Lista de Produtos */}
+
       <div className="product-list">
         {filteredProducts.map((product) => (
           <div className="product-card" key={product.id}>
