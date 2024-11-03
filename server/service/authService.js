@@ -1,5 +1,3 @@
-
-
 function testRunning (name){
     return `${name} test success`
 }
