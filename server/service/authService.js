@@ -1,34 +1,45 @@
-function testRunning (name){
-    return `${name} test success`
-}
-const authService = {
-    insert: async (username, password) => {
-        return await User.create({ username, password });
-    },
-    findAll: async () => {
-        return await User.findAll();
-    },
-    findById: async (id) => {
-        return await User.findByPk(id);
-    },
-    update: async (id, newUsername, newPassword) => {
-        const user = await User.findByPk(id);
-        if (user) {
-            user.username = newUsername || user.username;
-            user.password = newPassword || user.password;
-            await user.save();
-            return user;
-        }
-        return null;
-    },
-    remove: async (id) => {
-        const user = await User.findByPk(id);
-        if (user) {
-            await user.destroy();
-            return user;
-        }
-        return null;
-    }
-};
+const userDao = require('../dao/userDao') 
+const bcrypt = require('bcrypt')
+const jwt = require("jsonwebtoken")
 
-module.exports = authService;
+const login = async (req, res) => {
+    const {username, password} = req.body;
+    const user = await userDao.findUser({username});
+
+    if(!user){
+        return res.status(400).send("Senha ou usuário inválido");
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password)
+    if(!validPassword){
+        return res.status(400).send("Senha ou usuário inválido");
+    }
+
+    const token = jwt.sign({userId: user.id}, process.env.JWT_SECRET)
+    res.send({token})
+}
+
+const register = async (req, res) => {
+    try{
+        const {username, password} = req.body;
+        const existingUser = await userDao.findUser({username})
+
+        if(existingUser){
+            return res.status(400).json({error: "Usuário já existe"})
+        }
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
+        const idUser = await userDao.insert({username},hashedPassword)
+
+        res.json({
+            message: "Usuário registrado",
+            userId: savedUser._id
+        })
+    }catch(error){
+        console.error(error);
+        res.status(500).json({error: "Internal server error"})
+    }
+}
+module.exports = {login, register}
+ 
