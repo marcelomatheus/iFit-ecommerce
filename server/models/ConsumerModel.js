@@ -29,4 +29,4 @@ const Consumer = database.define('Cliente',{
 
 })
 
-export default Consumer;
+modules.export = Consumer;
