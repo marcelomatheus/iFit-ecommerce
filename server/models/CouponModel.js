@@ -17,4 +17,4 @@ const Coupon = database.define('Cupom', {
     }
 });
 
-export default Coupon;
+module.exports=Coupon;

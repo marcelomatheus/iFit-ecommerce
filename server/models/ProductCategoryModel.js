@@ -14,4 +14,4 @@ const ProductCategory = database.define('Categoria_Produto', {
     }
 });
 
-export default ProductCategory;
+module.exports=ProductCategory;

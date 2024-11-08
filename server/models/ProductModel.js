@@ -1,7 +1,7 @@
-import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+const { DataTypes } = require("sequelize");
+const { database } = require("../databases/ecommercedb");
 
-const Product = database.define('Produto', {
+const Product = database.define('produto', {
     cod_produto: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -49,4 +49,4 @@ const Product = database.define('Produto', {
     }
 });
 
-export default Product;
+module.exports=Product;

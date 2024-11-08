@@ -13,4 +13,4 @@ const DeliveryStatus = database.define('Status_Entrega', {
     }
 });
 
-export default DeliveryStatus;
+module.exports=DeliveryStatus;

@@ -18,4 +18,4 @@ const Promotion = database.define('Promocao', {
     }
 });
 
-export default Promotion;
+module.exports=Promotion;

@@ -13,4 +13,4 @@ const Color = database.define('Cor', {
     }
 });
 
-export default Color;
+module.exports=Color;

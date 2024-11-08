@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import database from "../databases/ecommercedb";
 
-const Consumer = database.define('Cliente',{
+const Consumer = database.define('cliente',{
     nome: {
         type: DataTypes.STRING,
         allowNull: false
@@ -27,6 +27,9 @@ const Consumer = database.define('Cliente',{
         allowNull: false
     }
 
-})
-
-modules.export = Consumer;
+}, 
+{
+    tableName: 'cliente', 
+    timestamps: false,  
+  })
+export default Consumer;

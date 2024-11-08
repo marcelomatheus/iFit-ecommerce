@@ -13,4 +13,4 @@ const PaymentMethod = database.define('Metodo_Pagamento', {
     }
 });
 
-export default PaymentMethod;
+module.exports=PaymentMethod;
