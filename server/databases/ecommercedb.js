@@ -1,10 +1,7 @@
-const {Sequelize} = require('sequelize');
+import {Sequelize} from 'sequelize';
 
 
-const database = new Sequelize('db_ifit','root','',{
-    host: 'localhost',
-    dialect: 'mysql'
-})
+const database = new Sequelize('mysql://root:@localhost:3306/db_ifit') 
 const connection =  async () =>{
     try {
         await database.authenticate();
@@ -13,4 +10,4 @@ const connection =  async () =>{
         return 'failed'
       } 
 }
-module.exports = connection;
+module.exports = {database, connection};

@@ -29,4 +29,4 @@ const Review = database.define('Avaliacao', {
     }
 });
 
-export default Review;
+module.exports=Review;

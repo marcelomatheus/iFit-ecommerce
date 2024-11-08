@@ -29,4 +29,4 @@ const ShoppingCart = database.define('Pedido', {
     }
 });
 
-export default ShoppingCart;
+module.exports=ShoppingCart;

@@ -6,6 +6,7 @@
     "test": "jest --detectOpenHandles",
     "start": "nodemon app.js"
   },
+  "type":"module",
   "author": "marcelomatheus",
   "license": "ISC",
   "description": "",

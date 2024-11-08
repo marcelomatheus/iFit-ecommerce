@@ -13,4 +13,4 @@ const PaymentStatus = database.define('Status_Pagamento', {
     }
 });
 
-export default PaymentStatus;
+module.exports=PaymentStatus;

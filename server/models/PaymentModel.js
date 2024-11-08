@@ -37,4 +37,4 @@ const Payment = database.define('Pagamento', {
     }
 });
 
-export default Payment;
+module.exports=Payment;
