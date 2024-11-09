@@ -1,6 +1,6 @@
-const userDao = require('../dao/userDao') 
-const bcrypt = require('bcrypt')
-const jwt = require("jsonwebtoken")
+import userDao from '../dao/userDao'; 
+import bcrypt from 'bcrypt';
+import jwt from "jsonwebtoken";
 
 const login = async (req, res) => {
     const {username, password} = req.body;
@@ -22,7 +22,7 @@ const login = async (req, res) => {
 const register = async (req, res) => {
     try{
         const {username, password} = req.body;
-        const existingUser = await userDao.findUser({username})
+        const existingUser = await userDao.findUser({username});
 
         if(existingUser){
             return res.status(400).json({error: "Usuário já existe"})
@@ -41,5 +41,5 @@ const register = async (req, res) => {
         res.status(500).json({error: "Internal server error"})
     }
 }
-module.exports = {login, register}
+export default {login, register}
  

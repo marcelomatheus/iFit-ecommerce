@@ -16,6 +16,10 @@ const Promotion = database.define('Promocao', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'promocao', 
+    timestamps: false,  
+  });
 
-module.exports=Promotion;
+export default Promotion;

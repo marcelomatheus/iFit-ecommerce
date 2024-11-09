@@ -35,6 +35,10 @@ const Payment = database.define('Pagamento', {
             key: 'cod_status_pag'
         }
     }
-});
+}, 
+{
+    tableName: 'pagamento', 
+    timestamps: false,  
+  });
 
-module.exports=Payment;
+export default Payment;

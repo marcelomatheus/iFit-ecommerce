@@ -11,7 +11,7 @@ const Wishlist = database.define('Wishlist', {
         type: DataTypes.CHAR(11),
         allowNull: false,
         references: {
-            model: 'Consumer', // Referência ao modelo 'Cliente'
+            model: 'Customer', // Referência ao modelo 'Cliente'
             key: 'CPF_Cliente'
         }
     },
@@ -23,6 +23,10 @@ const Wishlist = database.define('Wishlist', {
             key: 'Cod_Produto'
         }
     }
-});
+}, 
+{
+    tableName: 'wishlist', 
+    timestamps: false,  
+  });
 
 export default Wishlist;

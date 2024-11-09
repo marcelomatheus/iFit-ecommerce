@@ -23,6 +23,10 @@ const Request = database.define('Solicitacao', {
         type: DataTypes.DATE,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'solicitacao', 
+    timestamps: false,  
+  });
 
 export default Request;

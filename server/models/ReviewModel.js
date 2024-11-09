@@ -11,7 +11,7 @@ const Review = database.define('Avaliacao', {
         type: DataTypes.CHAR,
         allowNull: false,
         references: {
-            model: 'Consumer', // Referência ao modelo 'Cliente'
+            model: 'Customer', // Referência ao modelo 'Cliente'
             key: 'CPF_Cliente'
         }
     },
@@ -27,6 +27,10 @@ const Review = database.define('Avaliacao', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'avaliacao', 
+    timestamps: false,  
+  });
 
-module.exports=Review;
+export default Review;

@@ -1,14 +1,15 @@
 import { DataTypes } from "sequelize";
 import database from "../databases/ecommercedb";
 
-const Consumer = database.define('cliente',{
+const Customer = database.define('cliente',{
     nome: {
         type: DataTypes.STRING,
         allowNull: false
     },
     cpf_cliente: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        primaryKey: true
     },
     email:{
         type: DataTypes.STRING,
@@ -32,4 +33,4 @@ const Consumer = database.define('cliente',{
     tableName: 'cliente', 
     timestamps: false,  
   })
-export default Consumer;
+export default Customer;

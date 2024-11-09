@@ -11,6 +11,9 @@ const PaymentMethod = database.define('Metodo_Pagamento', {
         type: DataTypes.STRING(50),
         allowNull: false
     }
-});
-
-module.exports=PaymentMethod;
+}, 
+{
+    tableName: 'metodo_pagamento', 
+    timestamps: false,  
+  });
+export default PaymentMethod;

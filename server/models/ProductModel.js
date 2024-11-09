@@ -47,6 +47,10 @@ const Product = database.define('produto', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'produto', 
+    timestamps: false,  
+  });
 
-module.exports=Product;
+export default Product;

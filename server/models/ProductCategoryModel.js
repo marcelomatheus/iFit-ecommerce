@@ -12,6 +12,10 @@ const ProductCategory = database.define('Categoria_Produto', {
         type: DataTypes.STRING(50),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'categoria_produto', 
+    timestamps: false,  
+  });
 
-module.exports=ProductCategory;
+export default ProductCategory;

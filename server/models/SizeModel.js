@@ -11,6 +11,10 @@ const Size = database.define('Tamanho', {
         type: DataTypes.STRING(30),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'tamanho', 
+    timestamps: false,  
+  });
 
 export default Size;

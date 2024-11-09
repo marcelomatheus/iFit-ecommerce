@@ -11,6 +11,10 @@ const Color = database.define('Cor', {
         type: DataTypes.STRING(20),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'cor', 
+    timestamps: false,  
+  });
 
-module.exports=Color;
+export default Color;

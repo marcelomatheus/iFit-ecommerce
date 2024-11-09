@@ -11,6 +11,10 @@ const PaymentStatus = database.define('Status_Pagamento', {
         type: DataTypes.STRING(50),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'status_pagamento', 
+    timestamps: false,  
+  });
 
-module.exports=PaymentStatus;
+export default PaymentStatus;

@@ -11,7 +11,7 @@ const ShoppingCart = database.define('Pedido', {
         type: DataTypes.CHAR,
         allowNull: false,
         references: {
-            model: 'Consumer', // Referência ao modelo 'Cliente'
+            model: 'Customer', // Referência ao modelo 'Cliente'
             key: 'CPF_Cliente'
         }
     },
@@ -27,6 +27,10 @@ const ShoppingCart = database.define('Pedido', {
         type: DataTypes.BOOLEAN,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'pedido', 
+    timestamps: false,  
+  });
 
-module.exports=ShoppingCart;
+export default ShoppingCart;

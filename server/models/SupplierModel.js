@@ -23,6 +23,10 @@ const Supplier = database.define('Fornecedor', {
         type: DataTypes.STRING(150),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'fornecedor', 
+    timestamps: false,  
+  });
 
 export default Supplier;
