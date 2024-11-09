@@ -15,6 +15,10 @@ const Coupon = database.define('Cupom', {
         type: DataTypes.STRING(50),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'cupom', 
+    timestamps: false,  
+  });
 
 module.exports=Coupon;

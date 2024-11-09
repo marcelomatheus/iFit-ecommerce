@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const cors = require('cors');
-const {test, login, register}  = require('../service/authService')
+import cors from 'cors';
+import {test, login, register} from '../service/authService';
 
 
 router.use(
@@ -11,8 +11,8 @@ router.use(
     })
 )
 
-router.get('/',test)
-router.post('/login',login)
-router.post('/register',register)
+router.get('/auth',test)
+router.post('/auth/login',login)
+router.post('/auth/register',register)
 
-module.exports = router;
+export default router;

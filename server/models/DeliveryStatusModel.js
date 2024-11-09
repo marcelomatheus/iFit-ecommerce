@@ -11,6 +11,10 @@ const DeliveryStatus = database.define('Status_Entrega', {
         type: DataTypes.STRING(50),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'status_entrega', 
+    timestamps: false,  
+  });
 
-module.exports=DeliveryStatus;
+export default DeliveryStatus;

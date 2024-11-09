@@ -15,6 +15,10 @@ const DeliveryCompany = database.define('Empresa_Entrega', {
         type: DataTypes.CHAR(14),
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'empresa_entrega', 
+    timestamps: false,  
+  });
 
 export default DeliveryCompany;

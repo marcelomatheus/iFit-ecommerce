@@ -6,7 +6,7 @@ const WhishlistItens = database.define('Itens_Wish', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Wishlist', // Referência ao modelo 'Wishlist'
+            model: 'Wishlist', 
             key: 'Cod_Wish'
         },
         primaryKey: true
@@ -15,7 +15,7 @@ const WhishlistItens = database.define('Itens_Wish', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'Product', // Referência ao modelo 'Produto'
+            model: 'Product', 
             key: 'Cod_Produto'
         },
         primaryKey: true
@@ -24,6 +24,10 @@ const WhishlistItens = database.define('Itens_Wish', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'itens_wish', 
+    timestamps: false,  
+  });
 
 export default WhishlistItens;

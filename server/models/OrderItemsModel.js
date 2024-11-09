@@ -24,6 +24,10 @@ const OrderItems = database.define('Itens_Pedido', {
         type: DataTypes.INTEGER,
         allowNull: false
     }
-});
+}, 
+{
+    tableName: 'itens_pedido', 
+    timestamps: false,  
+  });
 
 export default OrderItems;
