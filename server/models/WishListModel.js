@@ -5,7 +5,8 @@ const Wishlist = database.define('Wishlist', {
     Cod_Wish: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     CPF_Cliente: {
         type: DataTypes.CHAR(11),
