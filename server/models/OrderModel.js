@@ -1,17 +1,18 @@
 import { DataTypes } from "sequelize";
 import database from "../databases/ecommercedb";
-
-const ShoppingCart = database.define('Pedido', {
+//Cod_Pedido
+const Order = database.define('Pedido', {
     Cod_Pedido: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     CPF_Cliente: {
         type: DataTypes.CHAR,
         allowNull: false,
         references: {
-            model: 'Customer', // Referência ao modelo 'Cliente'
+            model: 'Customer', 
             key: 'CPF_Cliente'
         }
     },
@@ -33,4 +34,4 @@ const ShoppingCart = database.define('Pedido', {
     timestamps: false,  
   });
 
-export default ShoppingCart;
+export default Order;
