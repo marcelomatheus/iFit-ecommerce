@@ -1,4 +1,4 @@
-# <img src="[caminho/para/o/gif.gif](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWF4bnR5eTh0M2ZyejQ3ZXgwbWhlMnJodXJvODFwcnd6aGM1bm9icSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U2lO3XzEu90V90Csxf/giphy.gif)" alt="iFit" style="width:100%;"/>
+![record](https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWF4bnR5eTh0M2ZyejQ3ZXgwbWhlMnJodXJvODFwcnd6aGM1bm9icSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U2lO3XzEu90V90Csxf/giphy.gif)
 
 # iFIT - Sports Equipment E-commerce
 
