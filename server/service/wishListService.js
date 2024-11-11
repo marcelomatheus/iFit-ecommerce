@@ -1,5 +1,5 @@
-import WishListModel from '../models/WishListModel';
-import WishListItemsModel from '../models/WishListItemsModel';
+import WishListModel from '../models/WishListModel.js';
+import WishListItemsModel from '../models/WishlistItemsModel.js';
 
 const findWishListByCustomer = async (customerId) => {
     return await WishListModel.findOne({ where: { Cpf_Cliente: customerId } });
@@ -110,4 +110,4 @@ const updateWishList = async (req, res) => {
     }
 };
 
-export default { getWishListByCustomer, insertProductWishList, deleteProductWishList, updateWishList };
+export { getWishListByCustomer, insertProductWishList, deleteProductWishList, updateWishList };

@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import cors from 'cors';
-import {test, login, register} from '../service/authService';
+import {login, register} from '../service/authService.js';
 
 
 router.use(
@@ -11,7 +11,7 @@ router.use(
     })
 )
 
-router.get('/auth',test)
+
 router.post('/auth/login',login)
 router.post('/auth/register',register)
 

@@ -1,5 +1,5 @@
-import OrderItemsModel from '../models/OrderItemsModel';
-import OrderModel from '../models/OrderModel';
+import OrderItemsModel from '../models/OrderItemsModel.js';
+import OrderModel from '../models/OrderModel.js';
 import { format } from 'date-fns';
 
 const getOrderByCustomer = async (req, res) => {
@@ -119,10 +119,10 @@ const completedOrder = async (req, res) => {
     }
 };
 
-export default {
+export {
     getOrderByCustomer,
     insertProductOrder,
     deleteProductOrder,
     updateOrder,
-    completedOrder,
+    completedOrder
 };

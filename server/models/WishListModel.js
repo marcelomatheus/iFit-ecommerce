@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
 const Wishlist = database.define('Wishlist', {
     Cod_Wish: {
@@ -12,7 +12,7 @@ const Wishlist = database.define('Wishlist', {
         type: DataTypes.CHAR(11),
         allowNull: false,
         references: {
-            model: 'Customer', // Referência ao modelo 'Cliente'
+            model: 'Customer', 
             key: 'CPF_Cliente'
         }
     },

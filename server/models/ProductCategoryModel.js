@@ -1,6 +1,6 @@
 
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
 const ProductCategory = database.define('Categoria_Produto', {
     cod_categoria: {

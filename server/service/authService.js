@@ -1,8 +1,8 @@
-import userDao from '../dao/userDao';
+import userModel from '../models/UserModel.js';
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
     const { username, password } = req.body;
     
     try {
@@ -26,7 +26,7 @@ const login = async (req, res) => {
     }
 };
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
     try {
         const { username, password } = req.body;
         const existingUser = await userDao.findUser({ username });
@@ -51,4 +51,4 @@ const register = async (req, res) => {
     }
 };
 
-export default { login, register };
+

@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
-//Cod_Pedido
+import database from "../databases/ecommercedb.js";
+
 const Order = database.define('Pedido', {
     Cod_Pedido: {
         type: DataTypes.INTEGER,

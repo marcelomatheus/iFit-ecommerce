@@ -11,7 +11,7 @@ const CartPage = () => {
   useEffect(() => {
     const fetchCartData = async () => {
       try {
-        const response = //await axios.get('https://api.exemplo.com/cart');
+        const response = //await axios.get('https://localhost/cart');
         setCartItems(response.data);
       } catch (error) {
         console.error('Error fetching cart data:', error);

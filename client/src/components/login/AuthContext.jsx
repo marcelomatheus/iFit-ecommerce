@@ -1,23 +1,35 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useContext } from "react"; 
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({children}) => {
+export const useAuth = () => {
+    return useContext(AuthContext);
+}
+
+const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [loading, setLoading] = useState(true);
+
     const logout = () => {
         localStorage.removeItem('token');
         setToken(null);
-        window.location.reload();
-      };
-    useEffect(()=>{
+    };
+      
+    useEffect(() => {
         const storedToken = localStorage.getItem("token");
-        setToken(storedToken);
-        setLoading(false);
+        
+        if (storedToken) {
+            setToken(storedToken);
+        }
+
+        setLoading(false); // Move para garantir que o estado `token` já foi atualizado
     }, []);
+
     return (
-        <AuthContext.Provider value={{token, setToken, loading, logout }}>
-            {children}
+        <AuthContext.Provider value={{ token, setToken, loading, logout }}>
+            {!loading && children} {/* Renderizar os children apenas após `loading` ser `false` */}
         </AuthContext.Provider>
     );
 };
+
+export default AuthProvider;

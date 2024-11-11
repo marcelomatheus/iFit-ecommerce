@@ -1,4 +1,4 @@
-import Customer from '../models/CustomerModel';
+import Customer from '../models/CustomerModel.js';
 
 const signup = async (req, res) => {
     const dataCustomer = req.body;
@@ -73,4 +73,4 @@ const updateCustomer = async (req, res) => {
     }
 };
 
-export default { signup, getCustomerByEmail, getCustomerByCpf, updateCustomer, deleteCustomer };
+export { signup, getCustomerByEmail, getCustomerByCpf, updateCustomer, deleteCustomer };
