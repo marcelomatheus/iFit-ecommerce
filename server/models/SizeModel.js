@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
 const Size = database.define('Tamanho', {
     Cod_Tamanho: {

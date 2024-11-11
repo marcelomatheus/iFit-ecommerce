@@ -1,5 +1,5 @@
-const { DataTypes } = require("sequelize");
-const { database } = require("../databases/ecommercedb");
+import { DataTypes } from "sequelize";
+import database from "../databases/ecommercedb.js";
 
 const Product = database.define('produto', {
     cod_produto: {

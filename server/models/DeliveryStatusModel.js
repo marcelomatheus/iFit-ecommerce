@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
 const DeliveryStatus = database.define('Status_Entrega', {
     cod_status_entrega: {

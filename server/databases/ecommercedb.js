@@ -10,4 +10,4 @@ const connection =  async () =>{
         return 'failed'
       } 
 }
-module.exports = {database, connection};
+export default database;

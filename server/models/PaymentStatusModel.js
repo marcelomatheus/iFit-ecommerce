@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
 const PaymentStatus = database.define('Status_Pagamento', {
     cod_status_pag: {

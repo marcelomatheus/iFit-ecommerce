@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import cors from 'cors';
-import {test, login, register}  from '../service/productService';
+import {getProducts, getProductById}  from '../service/productService.js';
 
 
 router.use(
@@ -11,8 +11,8 @@ router.use(
     })
 )
 
-router.get('/',test)
-/*router.post('/login',login)
-router.post('/register',register)*/
+router.get('/products/all/:productId',getProductById)
+router.get('/products/:minPrice/:maxPrice/:category',getProducts)
+
 
 export default router;

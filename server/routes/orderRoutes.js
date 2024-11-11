@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import cors from 'cors';
-import {getOrderByCustomer, insertProductOrder, deleteProductOrder, updateOrder, completedOrder} from '../service/orderService';
+import {getOrderByCustomer, insertProductOrder, deleteProductOrder, updateOrder, completedOrder} from '../service/orderService.js';
 
 
 router.use(
@@ -14,7 +14,7 @@ router.use(
 router.get('/order/:customerId', getOrderByCustomer)
 router.post('/order', insertProductOrder)
 router.delete('/order/:customerId/:productId', deleteProductOrder)
-router.update('/order/:customerId', updateOrder)
-router.update('/order/:customerId', completedOrder)
+router.put('/order/update/:customerId', updateOrder)
+router.put('/order/completedOrder/:customerId', completedOrder)
 
 export default router;

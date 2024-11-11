@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
-import database from "../databases/ecommercedb";
+import database from "../databases/ecommercedb.js";
 
-const WhishlistItens = database.define('Itens_Wish', {
+const WhishlistItemsModel = database.define('Itens_Wish', {
     Cod_Wish: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -30,4 +30,4 @@ const WhishlistItens = database.define('Itens_Wish', {
     timestamps: false,  
   });
 
-export default WhishlistItens;
+export default WhishlistItemsModel;
