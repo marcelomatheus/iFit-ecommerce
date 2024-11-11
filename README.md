@@ -1,3 +1,4 @@
+# ![gif dashboard](https://photos.fife.usercontent.google.com/pw/AP1GczPWZjvyiv8NJAbptG4-kIstZjtxRPdJrd8DSBmsk2OxfBBbixlGgv6CAw=w690-h390-s-no-gm?authuser=0)
 # iFIT - Sports Equipment E-commerce
 
 **iFIT** is a modern e-commerce platform designed for sports enthusiasts to buy high-quality sports equipment effortlessly. Built with a focus on performance and user experience, this project leverages **React** for a dynamic frontend and **Node.js** for a robust and scalable backend.
